@@ -26,11 +26,14 @@ public class UserDataModel implements Serializable
         @Column(unique = true, nullable = false)
         private String email_address;
 
+//        @OneToMany(mappedBy = "GameStatistics")
+//        private List<GameStatisticsDataModel> statistics = new ArrayList<GameStatisticsDataModel>();
+
         public UserDataModel() { }
 
         public UserDataModel(UserDTO user)
         {
-            this.id = user.getID();
+            this.id = user.getId();
             username = user.getUsername();
             password = user.getPassword();
             email_address = user.getEmailAddress();

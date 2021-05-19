@@ -4,13 +4,14 @@ import pandemiconline2.panonlinebackend.DAL.DTO.UserDTO;
 import  pandemiconline2.panonlinebackend.API.ViewModel.UserViewModel;
 import lombok.Getter;
 import lombok.Setter;
+import pandemiconline2.panonlinebackend.DAL.Interface.IUser;
 
 import java.util.List;
 @Getter
 @Setter
 public class User
 {
-    private long ID;
+    private long id;
     private String Username;
     private String Password;
     private String EmailAddress;
@@ -20,21 +21,16 @@ public class User
     //Constructors
     public User(UserDTO user)
     {
-        ID = user.getID();
+        id = user.getId();
         Username = user.getUsername();
         EmailAddress = user.getEmailAddress();
     }
 
     public User(UserViewModel user)
     {
-        ID = user.getID();
+        id = user.getID();
         Username = user.getUsername();
         EmailAddress = user.getEmailAddress();
-    }
-
-    public void SaveUser()
-    {
-
     }
 
     public void DeleteUser()
